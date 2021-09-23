@@ -1,7 +1,5 @@
 # Plan
 ## SPRINT 1
-<!-- / 1 march-7 march / -->
-
 1. Initial screen
 - to do: list of tasks that need to be done for the day
 - add default title
