@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import TodoList from './src/Todo/TodoList'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>Simple to do app. Enjoy!</Text>
+      <TodoList/>
     </View>
   );
 }
@@ -15,5 +17,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: StatusBar.currentHeight ? StatusBar.currentHeight + 30 : 30
   },
 });
