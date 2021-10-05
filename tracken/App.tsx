@@ -1,5 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import React from 'react'
+
+import { StyleSheet, Text, View, StatusBar } from 'react-native'
+
 import TodoList from './src/Todo/TodoList'
 
 export default function App() {
@@ -8,7 +10,7 @@ export default function App() {
       <Text>Simple to do app. Enjoy!</Text>
       <TodoList/>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -19,4 +21,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: StatusBar.currentHeight ? StatusBar.currentHeight + 30 : 30
   },
-});
+})
+

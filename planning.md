@@ -7,11 +7,14 @@
 - CRUD operation over the list
 1.1. Create - create item with title
 1.2. Read - able to open it and see the title
-1.3 Update - after enter an item, title can be edited
-1.4 Delete - can be done directly in the list
-2. Make code more reusable and readable, using best practices - styles, common components...
-3. Make it more beautiful
-4. Add lint config
+1.3. Update - after enter an item, title can be edited
+1.4. Delete - can be done directly in the list
+2. Add lint config
+3. Make code more reusable and readable, using best practices - styles, common components...
+3.1. Add `styled-components`
+3.2. Convert all styles using `styled-components`
+3.3. Add theme(dark/light)
+
 
 ## SPRINT 2
 1. ...
