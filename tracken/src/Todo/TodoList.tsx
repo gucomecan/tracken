@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { SafeAreaView, View, Text, FlatList, Button } from 'react-native'
 import TodoItem from './TodoItem'
 import { getId } from '../utils'
+import styled from 'styled-components'
 
-const TITLE_INITIAL_VALUE = 'Base title'
+const TITLE_INITIAL_VALUE = 'Name...'
 
 const TodoList = () => {
   const [titles, setTitles] = useState<string[]>([])
@@ -26,19 +27,11 @@ const TodoList = () => {
     setTitles(newTitles)
   }
 
-  const removeAll = () => {
-    setTitles([])
-  }
+  const removeAll = () => setTitles([])
 
   return (
-    <SafeAreaView style={{paddingHorizontal: 30, flex: 1, width: '100%'}}>
-      <View style={{
-        width: '80%',
-        alignSelf: 'center',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginVertical: 30
-      }}>
+    <Wrapper>
+      <Controls>
         <Button
           color='rgb(87, 179, 97)'
           title='+ Add '
@@ -47,10 +40,10 @@ const TodoList = () => {
         <Button
           color='rgb(204, 107, 100)'
           title='Remove all'
-          onPress={addTitle}
+          onPress={removeAll}
         />
-      </View>
-      <View style={{alignItems: 'center'}}>
+      </Controls>
+      <>
         {
           titles.length
             ? (
@@ -60,14 +53,28 @@ const TodoList = () => {
                 renderItem={item => <TodoItem title={item.item} index={item.index} onSubmit={changeTitle} onRemove={removeTitle}/>}
               />
             )
-            : (
-              <Text>Looks like you don't have anything to do! </Text>
-            )
+            : <Text>Looks like you don&apos;t have anything to do!</Text>
         }
-      </View>
+      </>
 
-    </SafeAreaView >
+    </Wrapper>
   )
 }
+
+const Wrapper = styled(SafeAreaView)({
+  paddingHorizontal: 30,
+  flex: 1,
+  width: '100%',
+  borderWidth: 1,
+  backgroundColor: 'pink'
+})
+
+const Controls = styled(View)({
+  width: '80%',
+  alignSelf: 'center',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  marginVertical: 30
+})
 
 export default TodoList
